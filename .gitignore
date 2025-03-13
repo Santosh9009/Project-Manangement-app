@@ -1,0 +1,65 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs
+*.log
+yarn-error.log
+npm-debug.log
+pnpm-debug.log
+lerna-debug.log
+*.log.*
+
+# Build and output files
+dist/
+build/
+.tmp/
+temp/
+.cache/
+
+# Editor/IDE-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+*.vscode/
+
+# Dependency directories for backend and frontend
+frontend/node_modules/
+backend/node_modules/
+
+# Backend (Node.js + Express)
+backend/.env
+backend/.cache
+backend/tmp/
+backend/logs/
+backend/debug.log
+backend/*.sqlite
+backend/*.sqlite-journal
+
+# Frontend (Vite + React)
+frontend/.vite/
+frontend/.vercel/
+frontend/.firebase/
+frontend/dist/
+
+# Misc
+.DS_Store
+Thumbs.db
+*.bak
+*.old
+*.pid
+*.seed
+*.pid.lock
