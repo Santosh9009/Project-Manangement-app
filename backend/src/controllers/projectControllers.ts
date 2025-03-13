@@ -135,7 +135,9 @@ export const uploadProjectFiles = async (req: any, res: any) => {
 export const getProjectById = async (req: any, res: any) => {
   try {
     const projectId = req.params.id;
-    const project = await Project.findById(projectId);
+    const project = await Project.findById(projectId)
+      .populate('customerId', 'name email contactNumber') // Add this line to populate customer details
+      .lean(); // Add lean() for better performance
     
     if (!project) {
       return res.status(404).json({ message: "Project not found" });
@@ -143,6 +145,7 @@ export const getProjectById = async (req: any, res: any) => {
 
     res.status(200).json(project);
   } catch (error) {
+    console.error('Error fetching project:', error);
     res.status(500).json({ message: "Error fetching project", error });
   }
 };

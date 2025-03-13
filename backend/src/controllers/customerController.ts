@@ -31,9 +31,15 @@ export const addCustomer = async (req: any, res: any) => {
  */
 export const getCustomers = async (req: any, res: any) => {
   try {
-    const customers = await Customer.find();
-    res.json(customers);
+    const customers = await Customer.find().lean();
+    
+    if (!customers.length) {
+      return res.status(200).json({ customers: [], message: "No customers found" });
+    }
+    
+    res.json({ customers, message: "Customers fetched successfully" });
   } catch (error) {
+    console.error('Error fetching customers:', error);
     res.status(500).json({ message: "Error fetching customers", error });
   }
 };
