@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "tsc -b && node dist/index.js"
+    "dev": "tsc -b && node dist/index.js",
+    "seed": "tsc seed/seedDatabase.ts --outDir dist && node dist/seed/seedDatabase.js"
   },
   "keywords": [],
   "author": "",
